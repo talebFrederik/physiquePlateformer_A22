@@ -1,17 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/industrial_basic.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Ladder.tscn" type="PackedScene" id=3]
 
 [node name="Level" type="Node2D"]
 
-[node name="Foreground" type="TileMap" parent="."]
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 20, 152 )
+collision_layer = 1
+jump_speed = 200.0
+gravity = 500.0
+
+[node name="Ladder" parent="." instance=ExtResource( 3 )]
+position = Vector2( 60, 160 )
+
+[node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 524292, 0, 12, 524293, 0, 13, 524294, 0, 15, 720896, 0, 18, 720897, 0, 18, 720898, 0, 18, 720899, 0, 18, 720900, 0, 18, 720901, 0, 18, 720902, 0, 18, 720903, 0, 18, 720904, 0, 18, 720905, 0, 18, 720906, 0, 18, 720907, 0, 18, 720908, 0, 18, 720909, 0, 18, 720910, 0, 18, 720911, 0, 18, 720912, 0, 18, 720913, 0, 18, 720914, 0, 18, 720915, 0, 18 )
+tile_data = PoolIntArray( 524292, 0, 12, 524293, 0, 13, 524294, 0, 13, 524295, 0, 15, 589836, 0, 19, 655360, 0, 18, 655361, 0, 18, 655362, 0, 18, 655363, 0, 18, 655364, 0, 18, 655365, 0, 18, 655366, 0, 18, 655367, 0, 18, 655368, 0, 18, 655369, 0, 18, 655370, 0, 18, 655371, 0, 18, 655372, 0, 18, 655373, 0, 18, 655374, 0, 18, 655375, 0, 18, 655376, 0, 18, 655377, 0, 18, 655378, 0, 18, 655379, 0, 18 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 16, 168 )
-jump_speed = 250.0
-gravity = 500.0
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( 393224, 0, 12, 393225, 0, 13, 393226, 0, 15, 524292, 0, 12, 524293, 0, 13, 524294, 0, 13, 524295, 0, 15, 589836, 0, 19, 655360, 0, 18, 655361, 0, 18, 655362, 0, 18, 655363, 0, 18, 655364, 0, 18, 655365, 0, 18, 655366, 0, 18, 655367, 0, 18, 655368, 0, 18, 655369, 0, 18, 655370, 0, 18, 655371, 0, 18, 655372, 0, 18, 655373, 0, 18, 655374, 0, 18, 655375, 0, 18, 655376, 0, 18, 655377, 0, 18, 655378, 0, 18, 655379, 0, 18 )
